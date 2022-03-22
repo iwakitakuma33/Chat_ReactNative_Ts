@@ -1,7 +1,8 @@
 import "react-native-gesture-handler";
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { ChatScreen } from "./src/screens/ChatScreen";
+import { AuthStack } from "./src/navigations/AuthStack";
+import { MainStack } from "./src/navigations/MainStack";
 import { auth } from "./firebase";
 
 export default function App() {
@@ -21,7 +22,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      {loggedIn ? <ChatScreen /> : <ChatScreen />}
+      {loggedIn ? <MainStack /> : <AuthStack />}
     </NavigationContainer>
   );
 }
